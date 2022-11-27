@@ -21,14 +21,15 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Foods {
+public class Menu {
 	
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    private String foodName;
+    private String menuName;
+    private boolean disabled;
 
-    @OneToMany(mappedBy = "foods", cascade = CascadeType.ALL)
-    private List<FoodItems> foodItems = new ArrayList<>();
+    @OneToMany(mappedBy = "menu", cascade = CascadeType.ALL)
+    private List<MenuItems> menuItems = new ArrayList<>();
 }

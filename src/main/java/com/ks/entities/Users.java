@@ -28,8 +28,9 @@ public class Users {
 
     private String username;
     private String password;
-
-    @OneToMany(mappedBy = "users", cascade = CascadeType.ALL)
-    private Set<UserRole> role = new HashSet<>();
+    private String role;
+    
+//    @OneToMany(mappedBy = "users", cascade = CascadeType.ALL)
+//    private Set<UserRole> role = new HashSet<>();
 
 }

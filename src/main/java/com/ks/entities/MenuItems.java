@@ -1,5 +1,7 @@
 package com.ks.entities;
 
+import java.util.Optional;
+
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -18,17 +20,18 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class FoodItems {
+public class MenuItems {
 
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     private String itemName;
-    private float price;
+    private double price;
+    private boolean disabled;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "foodid")
-    private Foods foods;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "menuId")
+    private Menu menu;
 
 }

@@ -17,7 +17,7 @@ import lombok.Setter;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
+//@Entity
 
 public class UserRole {
 
@@ -26,8 +26,8 @@ public class UserRole {
     private long id;
     private String role;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "userid")
-    private Users users;
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "userid")
+//    private Users users;
 
 }

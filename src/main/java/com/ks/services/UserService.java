@@ -12,5 +12,7 @@ public interface UserService {
     void resetPassowr(String username, String newPassword);
 
     List<Users> getUsers();
+    
+    Users getUser(String username, String password);
 
 }

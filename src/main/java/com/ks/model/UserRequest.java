@@ -1,6 +1,6 @@
 package com.ks.model;
 
-import java.util.List;
+//import java.util.List;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -16,6 +16,8 @@ public class UserRequest {
     private long id;
     private String username;
     private String password;
-    private List<String> roles;
+    private String role;
+    
+//    private List<String> roles;
 
 }
