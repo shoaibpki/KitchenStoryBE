@@ -61,14 +61,22 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<Users> getUsers() {
-        // TODO Auto-generated method stub
-        return null;
+        return userRepository.findAll();
     }
 
 	@Override
 	public Users getUser(String username, String password) {
 		Users user = userRepository.findByUsernameAndPassword(username, password);
 		return user;
+	}
+
+	@Override
+	public void changeUserPass(Long id, String newPassword) {
+		
+		Users user = userRepository.findById(id)
+				.orElseThrow(() -> new RuntimeException("Bad Credential"));
+		user.setPassword(newPassword);
+		userRepository.save(user);
 	}
 
 }

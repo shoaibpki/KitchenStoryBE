@@ -11,7 +11,8 @@ public interface MenuItemsService {
 	List<MenuItems> getMenuItems();
 	void saveMenuItem(MenuModel menuModel);
 	void deleteMenuItem(Long id);
-
+	List<MenuItems> getItemsByMenu(Long mid);
+	
 	void saveMenu(Menu menu);
 	List<Menu> getMenuAll();
 

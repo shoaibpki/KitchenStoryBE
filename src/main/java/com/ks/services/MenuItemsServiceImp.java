@@ -54,12 +54,18 @@ public class MenuItemsServiceImp implements MenuItemsService {
 		mi.setDisabled(menuModel.isDisabled());
 		mi.setMenu(lmenu);
 		menuItemRepository.save(mi);
-		
 	}
 
 	@Override
 	public List<Menu> getMenuAll() {
 		return menuRepository.findAll();
+	}
+
+	@Override
+	public List<MenuItems> getItemsByMenu(Long mid) {
+		List<MenuItems> mi = menuItemRepository.findByMenuId(mid);
+		return mi;
+		
 	}
 
 

@@ -15,4 +15,7 @@ public interface UserService {
     
     Users getUser(String username, String password);
 
+	void changeUserPass(Long id, String newPassword);
+
+
 }
